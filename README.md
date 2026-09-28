@@ -1,11 +1,11 @@
 # Vahini Study Circle
 
-An independent English study companion to Bhagawan Sri Sathya Sai Baba's Vahini series. Devotees can study each book in its original chapter or section order, read fuller summaries, explore questions and answers, test their understanding, and write personal reflections.
+An independent English and Odia study companion to Bhagawan Sri Sathya Sai Baba's Vahini series. Devotees can study each book in its original chapter or section order, read fuller summaries, explore questions and answers, test their understanding, and write personal reflections.
 
 **15 works · 402 study entries · 2,010 Q&A · 2,010 quiz questions**
 
 - [Open Vahini Study Circle](https://vahini-study-circle.saratsaisanama.chatgpt.site/)
-- [GitHub repository](https://github.com/sarat-coder/Spiritual-Study-Circle)
+- [GitHub repository](https://github.com/sarat-coder/Spiritual-Study-Circle-Oriya-and-English)
 
 The hosted site currently uses owner-only access. Repository access and website access are managed separately.
 
@@ -16,8 +16,8 @@ This is a static HTML, CSS, and JavaScript website. No npm installation, framewo
 With Git and Python 3 installed:
 
 ```sh
-git clone https://github.com/sarat-coder/Spiritual-Study-Circle.git
-cd Spiritual-Study-Circle
+git clone https://github.com/sarat-coder/Spiritual-Study-Circle-Oriya-and-English.git
+cd Spiritual-Study-Circle-Oriya-and-English
 python -m http.server 4173 --bind 127.0.0.1 --directory dist
 ```
 
@@ -38,17 +38,17 @@ Every study entry has five Q&A and five multiple-choice questions. Questions tes
 
 ## Collection coverage
 
-### Odia collection — Upanishad and Sutra Vahini
+### Odia collection — Upanishad, Sutra, and Bhagavatha Vahini
 
 [Read Upanishad Vahini in Odia](https://vahini-study-circle.saratsaisanama.chatgpt.site/odia.html#upanishad/chapter-01/summary).
 
 All 12 chapters include Odia summaries, 60 Q&A, and 60 multiple-choice questions with explanations. This is an independent translation of the existing PDF-grounded English study aids, not an official translation of the full book. No outside teaching material was added. Original English PDF links remain available.
 
-Sutra Vahini also has all 12 chapters translated, including two-paragraph summaries, 60 Q&A and 60 quiz questions with explanations. [Read Sutra Vahini in Odia](https://vahini-study-circle.saratsaisanama.chatgpt.site/odia.html#sutra/chapter-01/summary). The Odia collection contains 24 chapters; the remaining 13 Vahinis are not yet translated.
+Sutra Vahini also has all 12 chapters translated, including two-paragraph summaries, 60 Q&A and 60 quiz questions with explanations. [Read Sutra Vahini in Odia](https://vahini-study-circle.saratsaisanama.chatgpt.site/odia.html#sutra/chapter-01/summary). Bhagavatha Vahini now includes all 42 chapters in Odia, with two-paragraph summaries, 210 Q&A and 210 quiz questions with translated answer choices and explanations. [Read Bhagavatha Vahini in Odia](https://vahini-study-circle.saratsaisanama.chatgpt.site/odia.html#bhagavata-vahini/chapter-01/summary). The Odia collection contains 66 chapters across three books; the remaining 12 Vahinis are not yet translated.
 
-Use the Odia book selector to move between completed translations. Use **ଓଡ଼ିଆ** on either corresponding English page and **English** on the Odia page to switch while retaining the chapter and study section. Odia notes use separate browser-local keys (`vahini-note:or:<book-id>/<chapter-id>`) and do not replace English notes. Quiz attempts are separate per book and chapter and last only for the current page visit.
+Use the Odia book selector to move between completed translations. Use **ଓଡ଼ିଆ** on the corresponding English page and **English** on the Odia page to switch while retaining the chapter and study section. Odia notes use separate browser-local keys (`vahini-note:or:<book-id>/<chapter-id>`) and do not replace English notes. Quiz attempts are separate per book and chapter and last only for the current page visit.
 
-The Odia entry point is `dist/odia.html`, with Upanishad translations in `dist/odia-content.js`, Sutra translations in `dist/odia-sutra.js`, interactions in `dist/odia-app.js`, and typography overrides in `dist/odia.css`. It shares the original content metadata and base stylesheet. Keep translated quiz options in the same order as the English options because answer indices are shared.
+The Odia entry point is `dist/odia.html`, with Upanishad translations in `dist/odia-content.js`, Sutra translations in `dist/odia-sutra.js`, Bhagavatha translations in `dist/odia-bhagavatha.js`, interactions in `dist/odia-app.js`, and typography overrides in `dist/odia.css`. It shares the original content metadata and base stylesheet. Keep translated quiz options in the same order as the English options because answer indices are shared.
 
 | Vahini | Chapters or sections | Q&A | Quiz questions | URL identifier |
 | --- | ---: | ---: | ---: | --- |
@@ -191,7 +191,7 @@ The current website is hosted with Sites. `.openai/hosting.json` identifies that
 
 GitHub stores the source on `main`. A GitHub push does not, by itself, publish the current Sites website. No GitHub Actions deployment workflow or GitHub Pages configuration is included.
 
-On the original development checkout, `origin` points to the Sites source repository and `github` points to this GitHub repository. A fresh GitHub clone instead names GitHub `origin`. Check your remotes before pushing:
+On the original development checkout, `origin` points to the Sites source repository and `bilingual` points to this GitHub repository (`github` retains the earlier English repository). A fresh GitHub clone instead names GitHub `origin`. Check your remotes before pushing:
 
 ```sh
 git remote -v

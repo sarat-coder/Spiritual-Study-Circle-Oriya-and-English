@@ -5,7 +5,8 @@
   const num = n => String(n).replace(/\d/g, d => '୦୧୨୩୪୫୬୭୮୯'[d]);
   const editions = [
     {id:'upanishad',title:'ଉପନିଷଦ ବାହିନୀ',translations:window.UPANISHAD_ODIA},
-    {id:'sutra',title:'ସୂତ୍ର ବାହିନୀ',translations:window.SUTRA_ODIA}
+    {id:'sutra',title:'ସୂତ୍ର ବାହିନୀ',translations:window.SUTRA_ODIA},
+    {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
