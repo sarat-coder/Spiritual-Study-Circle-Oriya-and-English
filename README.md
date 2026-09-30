@@ -224,3 +224,11 @@ For a content correction, identify the Vahini, chapter or section, exact PDF pag
 This is an independent study companion, not an official translation or publication. Summaries, answers, and quiz explanations are study paraphrases and must not be presented as direct quotations from Bhagawan Baba.
 
 The source PDFs and devotional images retain their respective copyright notices and ownership. Their inclusion does not grant reuse rights. This repository currently has no project-wide licence file; no open-source licence is implied for the code or third-party materials.
+
+## Required language headings
+
+Keep the top dedication visible on desktop and mobile.
+
+- English: The Divine Nectarous Words of Bhagwan Sri Sathya Sai Baba
+- Odia: ଭଗବାନ ଶ୍ରୀ ସତ୍ୟ ସାଇ ବାବାଙ୍କ ବଚନାମୃତମ୍
+- Hindi (section pending): भगवान श्री सत्य साईं बाबा के वचनामृत

@@ -48,3 +48,7 @@ html[lang=or] h1{line-height:1.55;letter-spacing:normal}html[lang=or] .tabs{gap:
 @media(max-width:720px){.masthead{padding:18px 20px}.page-intro{padding:28px 20px}.book-header{padding:24px 22px}.tabs{width:100%;border-radius:var(--radius-lg)}.tab{padding:10px 14px;font-size:14px}.summary-text,html[lang=or] .summary-text{font-size:17px}.activity-title{font-size:24px}.source-card{padding:20px}.book-item{margin-bottom:4px}}
 @media(prefers-reduced-motion:no-preference){button,a,summary{transition:background-color var(--duration-fast) var(--ease-serene),box-shadow var(--duration-fast) var(--ease-serene)}}
 @media print{.book-header,.source-card{background:white;box-shadow:none;color:black}.book-header h2,.book-header .description,.book-header .eyebrow,.book-meta,.book-meta a{color:black}}
+
+/* Keep the dedication visible, including narrow reading panes. */
+.masthead{flex-wrap:wrap}.masthead .brand,.masthead .language{flex-shrink:0}.masthead .dedication{display:block;flex:1;min-width:200px;text-align:center;font-size:18px;font-weight:600;line-height:1.7;color:var(--blue-700)}
+@media(max-width:900px){.masthead .dedication{order:3;flex-basis:100%;min-width:0;font-size:17px}.masthead .language{margin-left:auto}}
