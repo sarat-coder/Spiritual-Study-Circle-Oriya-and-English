@@ -3,7 +3,10 @@
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const num = n => String(n).replace(/\d/g, d => '०१२३४५६७८९'[d]);
-  const editions = [{id:'upanishad',title:'उपनिषद् वाहिनी',translations:window.UPANISHAD_HINDI}].filter(b => b.translations?.length);
+  const editions = [
+    {id:'upanishad',title:'उपनिषद् वाहिनी',translations:window.UPANISHAD_HINDI},
+    {id:'sutra',title:'सूत्र वाहिनी',translations:window.SUTRA_HINDI}
+  ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
     return {...b, sourceUrl:original.sourceUrl, chapters:b.translations.map((t,i) => ({...original.topics[i],...t,

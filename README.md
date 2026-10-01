@@ -38,11 +38,11 @@ Every study entry has five Q&A and five multiple-choice questions. Questions tes
 
 ## Collection coverage
 
-### Hindi collection — Upanishad Vahini
+### Hindi collection — Upanishad and Sutra Vahini
 
-[Read Upanishad Vahini in Hindi](https://vahini-study-circle.saratsaisanama.chatgpt.site/hindi.html#upanishad/chapter-01/summary). All 12 chapters have Hindi summaries, 60 Q&A and 60 quiz questions with explanations, translated from the existing PDF-grounded English study aids. This is not an official translation of the full book. Other Vahinis are not yet available in Hindi.
+[Read Upanishad Vahini in Hindi](https://vahini-study-circle.saratsaisanama.chatgpt.site/hindi.html#upanishad/chapter-01/summary). All 12 chapters have Hindi summaries, 60 Q&A and 60 quiz questions with explanations, translated from the existing PDF-grounded English study aids. This is not an official translation of the full book. [Read Sutra Vahini in Hindi](https://vahini-study-circle.saratsaisanama.chatgpt.site/hindi.html#sutra/chapter-01/summary). Sutra adds all 12 chapters with two-paragraph summaries, 60 Q&A and 60 quiz questions with explanations. The Hindi collection now contains two books, 24 chapters, 120 Q&A and 120 quiz questions. The remaining 13 Vahinis are not yet available in Hindi.
 
-Use the language links to switch between Hindi, English, and Odia while retaining the Upanishad chapter and activity. Hindi personal reflections use separate `vahini-note:hi:` browser-storage keys. The Hindi entry point is `dist/hindi.html`, with `hindi-content.js`, `hindi-app.js`, and `hindi.css`.
+Use the language links to switch between Hindi, English, and Odia while retaining the Upanishad or Sutra chapter and activity. Hindi personal reflections use separate `vahini-note:hi:` browser-storage keys. The Hindi entry point is `dist/hindi.html`, with `hindi-content.js`, `hindi-sutra.js`, `hindi-app.js`, and `hindi.css`.
 
 ### Odia collection — Upanishad, Sutra, and Bhagavatha Vahini
 
