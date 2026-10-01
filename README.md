@@ -1,6 +1,6 @@
 # Vahini Study Circle
 
-An independent English and Odia study companion to Bhagawan Sri Sathya Sai Baba's Vahini series. Devotees can study each book in its original chapter or section order, read fuller summaries, explore questions and answers, test their understanding, and write personal reflections.
+An independent English, Odia, and Hindi study companion to Bhagawan Sri Sathya Sai Baba's Vahini series. Devotees can study each book in its original chapter or section order, read fuller summaries, explore questions and answers, test their understanding, and write personal reflections.
 
 **15 works · 402 study entries · 2,010 Q&A · 2,010 quiz questions**
 
@@ -37,6 +37,12 @@ Open [the local website](http://127.0.0.1:4173). Stop the server with `Ctrl+C`. 
 Every study entry has five Q&A and five multiple-choice questions. Questions test the supplied text rather than hypothetical practical scenarios. The Q&A and quiz views use the same five core questions in two study formats.
 
 ## Collection coverage
+
+### Hindi collection — Upanishad Vahini
+
+[Read Upanishad Vahini in Hindi](https://vahini-study-circle.saratsaisanama.chatgpt.site/hindi.html#upanishad/chapter-01/summary). All 12 chapters have Hindi summaries, 60 Q&A and 60 quiz questions with explanations, translated from the existing PDF-grounded English study aids. This is not an official translation of the full book. Other Vahinis are not yet available in Hindi.
+
+Use the language links to switch between Hindi, English, and Odia while retaining the Upanishad chapter and activity. Hindi personal reflections use separate `vahini-note:hi:` browser-storage keys. The Hindi entry point is `dist/hindi.html`, with `hindi-content.js`, `hindi-app.js`, and `hindi.css`.
 
 ### Odia collection — Upanishad, Sutra, and Bhagavatha Vahini
 
@@ -205,7 +211,7 @@ Use only the Vahini texts and user-supplied books. Bhagavatha, Ramakatha, Upanis
 
 ## Visual theme
 
-Both language editions use the user-supplied Delhi NCR Design System. Its CSS tokens are stored in `dist/design-tokens/`; `dist/theme.css` adapts the pink, sky blue, pastel yellow, and gold palette to the existing study interface, with rounded cards, pill buttons, and visible keyboard focus. English uses Playfair Display and Inter through the supplied Google Fonts stylesheet, with local fallbacks. Odia retains script-appropriate system fonts. The theme does not change study content or personal-note storage.
+All language editions use the user-supplied Delhi NCR Design System. Its CSS tokens are stored in `dist/design-tokens/`; `dist/theme.css` adapts the pink, sky blue, pastel yellow, and gold palette to the existing study interface, with rounded cards, pill buttons, and visible keyboard focus. English uses Playfair Display and Inter through the supplied Google Fonts stylesheet, with local fallbacks. Odia retains script-appropriate system fonts. The theme does not change study content or personal-note storage.
 
 ## Image credits
 
@@ -231,4 +237,4 @@ Keep the top dedication visible on desktop and mobile.
 
 - English: The Divine Nectarous Words of Bhagwan Sri Sathya Sai Baba
 - Odia: ଭଗବାନ ଶ୍ରୀ ସତ୍ୟ ସାଇ ବାବାଙ୍କ ବଚନାମୃତମ୍
-- Hindi (section pending): भगवान श्री सत्य साईं बाबा के वचनामृत
+- Hindi: भगवान श्री सत्य साईं बाबा के वचनामृत

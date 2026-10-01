@@ -1,0 +1,7 @@
+html[lang="hi"] { --font-sans-body: 'Nirmala UI', 'Mangal', 'Noto Sans Devanagari', sans-serif; --font-serif-display: var(--font-sans-body); }
+html[lang="hi"] h1 { line-height:1.65; letter-spacing:normal; }
+html[lang="hi"] .summary-text { font-size:19px; line-height:2; }
+.hindi-book-picker { margin-bottom:20px; }
+.hindi-book-picker label { display:block; margin-bottom:10px; font-weight:600; line-height:1.8; }
+.masthead .language { white-space:normal; line-height:1.8; }
+@media (max-width:720px) { html[lang="hi"] .summary-text { font-size:18px; } .masthead .language { font-size:14px; } }

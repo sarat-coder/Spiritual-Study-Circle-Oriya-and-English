@@ -32,6 +32,7 @@
     const hash = `#${book().id}/${current().id}/${tab}`;
     history.replaceState(null, '', hash);
     $('english-link').href = `./${hash}`;
+    $('hindi-link').href = `hindi.html${book().id==='upanishad'?hash:'#upanishad/chapter-01/summary'}`;
     document.querySelector('.collection-source').href = `./${hash}`;
     render();
     $('announcement').textContent = `${current().title}। ${tabs[tab]}।`;
