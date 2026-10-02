@@ -6,7 +6,8 @@
   const editions = [
     {id:'upanishad',title:'उपनिषद् वाहिनी',translations:window.UPANISHAD_HINDI},
     {id:'sutra',title:'सूत्र वाहिनी',translations:window.SUTRA_HINDI},
-    {id:'bhagavata-vahini',title:'भागवत वाहिनी',translations:window.BHAGAVATHA_HINDI}
+    {id:'bhagavata-vahini',title:'भागवत वाहिनी',translations:window.BHAGAVATHA_HINDI},
+    {id:'geetha-vahini',title:'गीता वाहिनी',translations:window.GITA_HINDI}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
@@ -33,6 +34,7 @@
     history.replaceState(null, '', hash);
     $('english-link').href = `./${hash}`;
     $('odia-link').href = `odia.html${hash}`;
+    $('odia-navigation').hidden = book().id === 'geetha-vahini';
     document.querySelector('.collection-source').href = `./${hash}`;
     render();
     $('announcement').textContent = `${current().title}। ${tabs[tab]}।`;

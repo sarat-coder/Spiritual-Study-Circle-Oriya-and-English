@@ -71,7 +71,7 @@
     $('book-header').classList.toggle('with-art',!!art);
     const originalLinks=chapterMode&&b.pdfUrls?b.pdfUrls.map(p=>`<a href="${sourceLink(p.url)}" target="_blank" rel="noopener noreferrer">${escape(p.label)} PDF ↗</a>`).join(''):`<a href="${sourceLink(b.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read original book ↗</a>${chapterMode?'':(b.pdfUrls || (b.pdfUrl?[{label:'Book',url:b.pdfUrl}]:[])).map(p=>`<a href="${sourceLink(p.url)}" target="_blank" rel="noopener noreferrer">${escape(p.label)} PDF ↗</a>`).join('')}`;
     const odiaLink=['upanishad','sutra','bhagavata-vahini'].includes(b.id)?`<a href="odia.html#${b.id}/${t.id}/${activeTab}" lang="or">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ →</a>`:'';
-    const hindiAvailable=['upanishad','sutra','bhagavata-vahini'].includes(b.id);
+    const hindiAvailable=['upanishad','sutra','bhagavata-vahini','geetha-vahini'].includes(b.id);
     document.querySelector('.language').innerHTML=`English${odiaLink?` · <a href="odia.html#${b.id}/${t.id}/${activeTab}" lang="or">ଓଡ଼ିଆ →</a>`:''} · <a href="hindi.html#${hindiAvailable?b.id:'upanishad'}/${hindiAvailable?t.id:'chapter-01'}/${hindiAvailable?activeTab:'summary'}" lang="hi" title="हिंदी अध्ययन संग्रह">हिंदी →</a>`;
     $('book-header').innerHTML=`<div class="book-copy"><p class="eyebrow">THE VAHINI SERIES · ENGLISH STUDY</p><h2>${escape(b.title)}</h2><p class="description">${escape(b.description)}</p><div class="book-meta"><span>${b.topics.length} ${chapterMode?unit+'s':'study topics'}</span><span class="meta-divider" aria-hidden="true"></span>${originalLinks}${odiaLink}</div></div>${art}`;
     $('topics-heading').textContent=`Study ${unit}s`;
