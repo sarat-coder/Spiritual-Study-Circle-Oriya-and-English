@@ -7,7 +7,8 @@
     {id:'upanishad',title:'उपनिषद् वाहिनी',translations:window.UPANISHAD_HINDI},
     {id:'sutra',title:'सूत्र वाहिनी',translations:window.SUTRA_HINDI},
     {id:'bhagavata-vahini',title:'भागवत वाहिनी',translations:window.BHAGAVATHA_HINDI},
-    {id:'geetha-vahini',title:'गीता वाहिनी',translations:window.GITA_HINDI}
+    {id:'geetha-vahini',title:'गीता वाहिनी',translations:window.GITA_HINDI},
+    {id:'ramakatha-rasavahini',title:'रामकथा रसवाहिनी',translations:window.RAMAKATHA_HINDI}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
@@ -24,7 +25,7 @@
   const noteKey = () => `vahini-note:hi:${book().id}/${current().id}`;
   const attemptKey = () => `${book().id}/${current().id}`;
   const attempt = () => { if (!attempts.has(attemptKey())) attempts.set(attemptKey(), {answers:[], checked:false}); return attempts.get(attemptKey()); };
-  const pdfLink = t => `${book().sourceUrl}#page=${t.pdfStartPage}`;
+  const pdfLink = t => `${(t.sourceUrl || book().sourceUrl).split('#')[0]}#page=${t.pdfStartPage}`;
   const source = t => `<a href="${pdfLink(t)}" target="_blank" rel="noopener noreferrer">मूल पाठ: PDF पृष्ठ ${num(t.pdfStartPage)}–${num(t.pdfEndPage)} ↗</a>`;
   const focusActivity = () => { $('activity').focus({preventScroll:true}); $('activity').scrollIntoView({block:'start'}); };
   function go(i, nextTab = 'summary') {
@@ -34,7 +35,7 @@
     history.replaceState(null, '', hash);
     $('english-link').href = `./${hash}`;
     $('odia-link').href = `odia.html${hash}`;
-    $('odia-navigation').hidden = book().id === 'geetha-vahini';
+    $('odia-navigation').hidden = !['upanishad','sutra','bhagavata-vahini'].includes(book().id);
     document.querySelector('.collection-source').href = `./${hash}`;
     render();
     $('announcement').textContent = `${current().title}। ${tabs[tab]}।`;
@@ -53,7 +54,7 @@
     $('hindi-book').innerHTML=books.map((b,i)=>`<option value="${i}" ${i===bookIndex?'selected':''}>${esc(b.title)}</option>`).join('');
     document.querySelector('.book-header h2').textContent=book().title;
     document.querySelector('.book-header .description').textContent=`मूल पुस्तक के क्रम में ${num(chapters.length)} अध्याय। प्रत्येक अध्याय में सारांश, पाँच प्रश्नोत्तर और पाँच बहुविकल्पीय प्रश्न हैं।`;
-    document.querySelector('.book-meta a').href=book().sourceUrl;
+    document.querySelector('.book-meta a').href=(t.sourceUrl || book().sourceUrl).split('#')[0];
     $('chapter-list').innerHTML = chapters.map((c,i) => `<button class="book-item ${i===index?'active':''}" data-chapter="${i}" ${i===index?'aria-current="true"':''}><span class="book-number">${num(i+1)}</span><span class="book-name">${esc(c.title)}</span></button>`).join('');
     $('chapter-select').innerHTML = chapters.map((c,i) => `<option value="${i}" ${i===index?'selected':''}>${num(i+1)} · ${esc(c.title)}</option>`).join('');
     $('topic-position').textContent = `अध्याय ${num(index+1)} / ${num(chapters.length)}`;
@@ -66,7 +67,7 @@
   function renderActivity() {
     const t = current(), heading = `<h3 class="activity-title">${esc(t.title)}</h3>`;
     if (tab === 'summary') {
-      $('activity').innerHTML = `${heading}<div class="summary-grid"><div>${t.summary.split('\n\n').map(p=>`<p class="summary-text">${esc(p)}</p>`).join('')}<div class="action-row"><button class="primary-button" data-tab="questions">प्रश्नोत्तर पढ़ें</button><button class="secondary-button" data-tab="quiz">प्रश्नमाला हल करें</button></div><p class="study-note">प्रदत्त पुस्तक पर आधारित अध्ययन सारांश का हिंदी रूपांतरण।</p></div><aside class="source-card"><p class="eyebrow">मूल पुस्तक पढ़ें</p><h4>अध्याय ${num(index+1)} · ${esc(t.title)}</h4><p>संपूर्ण शिक्षा और संदर्भ के लिए प्रदत्त अंग्रेज़ी पुस्तक पढ़ें।</p>${source(t)}</aside></div>`;
+      $('activity').innerHTML = `${heading}<div class="summary-grid"><div>${t.summary.split('\n\n').map(p=>`<p class="summary-text">${esc(p)}</p>`).join('')}<div class="action-row"><button class="primary-button" data-tab="questions">प्रश्नोत्तर पढ़ें</button><button class="secondary-button" data-tab="quiz">प्रश्नमाला हल करें</button></div><p class="study-note">प्रदत्त पुस्तक पर आधारित अध्ययन सारांश का हिंदी रूपांतरण।</p></div><aside class="source-card"><p class="eyebrow">मूल पुस्तक पढ़ें</p><h4>${esc(t.title)}</h4><p>संपूर्ण शिक्षा और संदर्भ के लिए प्रदत्त अंग्रेज़ी पुस्तक पढ़ें।</p>${source(t)}</aside></div>`;
     } else if (tab === 'questions') {
       $('activity').innerHTML = `${heading}<p class="qa-intro">हर प्रश्न पर विचार करें, फिर उत्तर खोलें।</p>${t.quiz.map(q=>`<details><summary>${esc(q.q)}</summary><p>${esc(q.options[q.correct])}। ${esc(q.explanation)}</p></details>`).join('')}<p class="study-note">${source(t)}</p><div class="action-row"><button class="primary-button" data-tab="quiz">अपनी समझ परखें</button><button class="secondary-button" data-tab="notes">अपना सारांश लिखें</button></div>`;
     } else if (tab === 'quiz') {
