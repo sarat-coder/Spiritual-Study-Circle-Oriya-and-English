@@ -9,7 +9,8 @@
     {id:'bhagavata-vahini',title:'भागवत वाहिनी',translations:window.BHAGAVATHA_HINDI},
     {id:'geetha-vahini',title:'गीता वाहिनी',translations:window.GITA_HINDI},
     {id:'ramakatha-rasavahini',title:'रामकथा रसवाहिनी',translations:window.RAMAKATHA_HINDI},
-    {id:'prema-vahini',title:'प्रेम वाहिनी',translations:window.PREMA_HINDI}
+    {id:'prema-vahini',title:'प्रेम वाहिनी',translations:window.PREMA_HINDI},
+    {id:'dharma-vahini',title:'धर्म वाहिनी',translations:window.DHARMA_HINDI}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
