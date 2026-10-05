@@ -12,7 +12,13 @@
     {id:'prema-vahini',title:'प्रेम वाहिनी',translations:window.PREMA_HINDI},
     {id:'dharma-vahini',title:'धर्म वाहिनी',translations:window.DHARMA_HINDI},
     {id:'dhyana-vahini',title:'ध्यान वाहिनी',translations:window.DHYANA_HINDI},
-    {id:'prashanthi-vahini',title:'प्रशांति वाहिनी',translations:window.PRASANTHI_HINDI}
+    {id:'prashanthi-vahini',title:'प्रशांति वाहिनी',translations:window.PRASANTHI_HINDI},
+    {id:'jnana-vahini',title:'ज्ञान वाहिनी',translations:window.JNANA_HINDI},
+    {id:'leela-kaivalya',title:'लीला कैवल्य वाहिनी',translations:window.LEELA_KAIVALYA_HINDI},
+    {id:'prasnottara',title:'प्रश्नोत्तर वाहिनी',translations:window.PRASNOTTARA_HINDI},
+    {id:'sandeha-nivarini',title:'संदेह निवारिणी',translations:window.SANDEHA_HINDI},
+    {id:'sathya-sai',title:'सत्य साई वाहिनी',translations:window.SATHYA_SAI_HINDI},
+    {id:'vidya',title:'विद्या वाहिनी',translations:window.VIDYA_HINDI}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
