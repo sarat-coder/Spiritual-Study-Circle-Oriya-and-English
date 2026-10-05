@@ -45,7 +45,7 @@
     history.replaceState(null, '', hash);
     $('english-link').href = `./${hash}`;
     $('odia-link').href = `odia.html${hash}`;
-    $('odia-navigation').hidden = !['upanishad','sutra','bhagavata-vahini'].includes(book().id);
+    $('odia-navigation').hidden = !['upanishad','sutra','bhagavata-vahini','geetha-vahini'].includes(book().id);
     document.querySelector('.collection-source').href = `./${hash}`;
     render();
     $('announcement').textContent = `${current().title}। ${tabs[tab]}।`;

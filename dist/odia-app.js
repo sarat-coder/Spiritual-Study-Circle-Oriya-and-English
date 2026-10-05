@@ -6,7 +6,8 @@
   const editions = [
     {id:'upanishad',title:'ଉପନିଷଦ ବାହିନୀ',translations:window.UPANISHAD_ODIA},
     {id:'sutra',title:'ସୂତ୍ର ବାହିନୀ',translations:window.SUTRA_ODIA},
-    {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA}
+    {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA},
+    {id:'geetha-vahini',title:'ଗୀତା ବାହିନୀ',translations:window.GITA_ODIA}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
@@ -32,7 +33,7 @@
     const hash = `#${book().id}/${current().id}/${tab}`;
     history.replaceState(null, '', hash);
     $('english-link').href = `./${hash}`;
-    $('hindi-link').href = `hindi.html${['upanishad','sutra','bhagavata-vahini'].includes(book().id)?hash:'#upanishad/chapter-01/summary'}`;
+    $('hindi-link').href = `hindi.html${hash}`;
     document.querySelector('.collection-source').href = `./${hash}`;
     render();
     $('announcement').textContent = `${current().title}। ${tabs[tab]}।`;
