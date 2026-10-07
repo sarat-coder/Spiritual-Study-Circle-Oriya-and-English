@@ -7,7 +7,8 @@
     {id:'upanishad',title:'ଉପନିଷଦ ବାହିନୀ',translations:window.UPANISHAD_ODIA},
     {id:'sutra',title:'ସୂତ୍ର ବାହିନୀ',translations:window.SUTRA_ODIA},
     {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA},
-    {id:'geetha-vahini',title:'ଗୀତା ବାହିନୀ',translations:window.GITA_ODIA}
+    {id:'geetha-vahini',title:'ଗୀତା ବାହିନୀ',translations:window.GITA_ODIA},
+    {id:'ramakatha-rasavahini',title:'ରାମକଥା ରସବାହିନୀ',translations:window.RAMAKATHA_ODIA}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
@@ -24,7 +25,7 @@
   const noteKey = () => `vahini-note:or:${book().id}/${current().id}`;
   const attemptKey = () => `${book().id}/${current().id}`;
   const attempt = () => { if (!attempts.has(attemptKey())) attempts.set(attemptKey(), {answers:[], checked:false}); return attempts.get(attemptKey()); };
-  const pdfLink = t => `${book().sourceUrl}#page=${t.pdfStartPage}`;
+  const pdfLink = t => `${(t.sourceUrl || book().sourceUrl).split('#')[0]}#page=${t.pdfStartPage}`;
   const source = t => `<a href="${pdfLink(t)}" target="_blank" rel="noopener noreferrer">ମୂଳ ପାଠ: PDF ପୃଷ୍ଠା ${num(t.pdfStartPage)}–${num(t.pdfEndPage)} ↗</a>`;
   const focusActivity = () => { $('activity').focus({preventScroll:true}); $('activity').scrollIntoView({block:'start'}); };
   function go(i, nextTab = 'summary') {
@@ -52,7 +53,7 @@
     $('odia-book').innerHTML=books.map((b,i)=>`<option value="${i}" ${i===bookIndex?'selected':''}>${esc(b.title)}</option>`).join('');
     document.querySelector('.book-header h2').textContent=book().title;
     document.querySelector('.book-header .description').textContent=`ମୂଳ ପୁସ୍ତକର କ୍ରମରେ ${num(chapters.length)}ଟି ଅଧ୍ୟାୟ। ପ୍ରତି ଅଧ୍ୟାୟରେ ସାରାଂଶ, ପାଞ୍ଚଟି ପ୍ରଶ୍ନୋତ୍ତର ଓ ପାଞ୍ଚଟି ବହୁବିକଳ୍ପ ପ୍ରଶ୍ନ ରହିଛି।`;
-    document.querySelector('.book-meta a').href=book().sourceUrl;
+    document.querySelector('.book-meta a').href=(t.sourceUrl || book().sourceUrl).split('#')[0];
     $('chapter-list').innerHTML = chapters.map((c,i) => `<button class="book-item ${i===index?'active':''}" data-chapter="${i}" ${i===index?'aria-current="true"':''}><span class="book-number">${num(i+1)}</span><span class="book-name">${esc(c.title)}</span></button>`).join('');
     $('chapter-select').innerHTML = chapters.map((c,i) => `<option value="${i}" ${i===index?'selected':''}>${num(i+1)} · ${esc(c.title)}</option>`).join('');
     $('topic-position').textContent = `ଅଧ୍ୟାୟ ${num(index+1)} / ${num(chapters.length)}`;
