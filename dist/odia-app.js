@@ -9,7 +9,8 @@
     {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA},
     {id:'geetha-vahini',title:'ଗୀତା ବାହିନୀ',translations:window.GITA_ODIA},
     {id:'ramakatha-rasavahini',title:'ରାମକଥା ରସବାହିନୀ',translations:window.RAMAKATHA_ODIA},
-    {id:'jnana-vahini',title:'ଜ୍ଞାନ ବାହିନୀ',translations:window.JNANA_ODIA}
+    {id:'jnana-vahini',title:'ଜ୍ଞାନ ବାହିନୀ',translations:window.JNANA_ODIA},
+    {id:'sathya-sai',title:'ସତ୍ୟ ସାଇ ବାହିନୀ',translations:window.SATHYA_SAI_ODIA}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
