@@ -12,7 +12,9 @@
     {id:'jnana-vahini',title:'ଜ୍ଞାନ ବାହିନୀ',translations:window.JNANA_ODIA},
     {id:'sathya-sai',title:'ସତ୍ୟ ସାଇ ବାହିନୀ',translations:window.SATHYA_SAI_ODIA},
     {id:'leela-kaivalya',title:'ଲୀଳା କୈବଲ୍ୟ ବାହିନୀ',translations:window.LEELA_ODIA},
-    {id:'sandeha-nivarini',title:'ସନ୍ଦେହ ନିବାରିଣୀ',translations:window.SANDEHA_ODIA}
+    {id:'sandeha-nivarini',title:'ସନ୍ଦେହ ନିବାରିଣୀ',translations:window.SANDEHA_ODIA},
+    {id:'prasnottara',title:'ପ୍ରଶ୍ନୋତ୍ତର ବାହିନୀ',translations:window.PRASNOTTARA_ODIA},
+    {id:'prashanthi-vahini',title:'ପ୍ରଶାନ୍ତି ବାହିନୀ',translations:window.PRASANTHI_ODIA}
   ].filter(b => b.translations?.length);
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
