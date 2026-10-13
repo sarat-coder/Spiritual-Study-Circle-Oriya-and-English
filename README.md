@@ -38,6 +38,16 @@ Every study entry has five Q&A and five multiple-choice questions. Questions tes
 
 ## Collection coverage
 
+### Ramakatha: values and character studies
+
+All 32 chapters across both parts now include expanded studies in **English, Odia, and Hindi**, beneath their existing summaries. Each adds chapter-specific moral values, named character qualities and lessons (including cautions where appropriate), one story or illustration from the supplied text, and a practical reflection for readers. Examples link to the correct source PDF part and page; the chapter's full PDF page range remains visible.
+
+These are independent study reflections, not quotations, official translations, or additional teachings attributed to Bhagawan. Narrative episodes and analogies are distinguished from everyday applications. No outside anecdotes have been added. Difficult episodes are treated with attention to dignity and compassion; miraculous events are not presented as actions to imitate.
+
+Only Ramakatha receives these sections. Existing summaries, questions, quizzes, notes, chapter IDs, and other Vahini content are unchanged. Localized additions are in `dist/ramakatha-study-en.js`, `dist/ramakatha-study-or.js`, and `dist/ramakatha-study-hi.js`; `dist/ramakatha-study.js` renders them using the original chapter metadata, with scoped styles in `dist/ramakatha-study.css`.
+
+Run `node tests/ramakatha-study.test.cjs` for the dependency-free content and rendering regression checks across all three languages. The DOM stub checks routes and generated markup; it is not a visual browser test.
+
 ### Hindi collection — all fifteen Vahinis
 
 All 15 Vahinis now have Hindi study editions: **402 chapters/sections and 2,010 source-based questions**, available as both Q&A and multiple-choice quizzes. Every section has a two-paragraph summary, five questions, translated answer choices and explanations, and a link to the corresponding original PDF pages. These are translations of the existing PDF-grounded English study aids, not official translations of the full books. No outside commentary was added.
@@ -202,7 +212,7 @@ git diff --check
 
 Before publishing a content change, confirm chapter counts, five questions in each set, valid answer indexes, unique options, correct PDF page links, and preservation of the other books. Compare the copied PDF with the supplied original. Review the local site to check navigation, quiz scoring and explanations, retry behaviour, source links, and saving a personal summary. Check both narrow and wide layouts when changing the interface.
 
-There is currently no automated test suite or package-manager configuration in this repository.
+Run `node tests/ramakatha-study.test.cjs` for automated Ramakatha content and generated-markup checks across English, Odia, and Hindi. No package installation is needed. This test uses a DOM stub and does not replace visual browser checks.
 
 ## Hosting and source control
 

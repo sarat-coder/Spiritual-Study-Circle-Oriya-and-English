@@ -1,0 +1,15 @@
+.chapter-values{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);max-width:850px;min-width:0;overflow-wrap:anywhere;letter-spacing:0}
+.chapter-values h4{font-size:23px;line-height:1.5;margin:0 0 12px}
+.chapter-values .values-note{font-size:14px;line-height:1.8;color:var(--muted);max-width:76ch}
+.values-section{margin-top:26px}
+.values-section h5{font-family:inherit;font-size:17px;font-weight:700;line-height:1.6;margin:0 0 10px;letter-spacing:0;color:var(--ink)}
+.values-section>p,.character-lessons{font-size:17px;line-height:1.9}
+.character-lessons{margin:0}
+.character-lessons>div{padding:12px 0;border-bottom:1px solid var(--line)}
+.character-lessons>div:first-child{padding-top:0}
+.character-lessons dt{font-weight:700}
+.character-lessons dd{margin:3px 0 0}
+.values-section .values-source{font-size:13px;line-height:1.8;margin-top:12px}
+.values-source span{display:block;color:var(--muted);margin-top:4px}
+@media(max-width:720px){.chapter-values{margin-top:26px;padding-top:24px}.chapter-values h4{font-size:21px}.values-section>p,.character-lessons{font-size:16px}}
+@media print{.values-section,.character-lessons>div{break-inside:avoid}.chapter-values{max-width:none}}
