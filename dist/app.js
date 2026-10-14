@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const books = window.VAHINI_BOOKS || [];
+  const books = window.orderVahiniBooks(window.VAHINI_BOOKS || []);
   const $ = id => document.getElementById(id);
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const sourceLink = value => {

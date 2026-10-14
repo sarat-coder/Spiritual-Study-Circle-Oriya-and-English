@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const num = n => String(n).replace(/\d/g, d => '୦୧୨୩୪୫୬୭୮୯'[d]);
-  const editions = [
+  const editions = window.orderVahiniBooks([
     {id:'upanishad',title:'ଉପନିଷଦ ବାହିନୀ',translations:window.UPANISHAD_ODIA},
     {id:'sutra',title:'ସୂତ୍ର ବାହିନୀ',translations:window.SUTRA_ODIA},
     {id:'bhagavata-vahini',title:'ଭାଗବତ ବାହିନୀ',translations:window.BHAGAVATHA_ODIA},
@@ -19,7 +19,7 @@
     {id:'dharma-vahini',title:'ଧର୍ମ ବାହିନୀ',translations:window.DHARMA_ODIA},
     {id:'prema-vahini',title:'ପ୍ରେମ ବାହିନୀ',translations:window.PREMA_ODIA},
     {id:'vidya',title:'ବିଦ୍ୟା ବାହିନୀ',translations:window.VIDYA_ODIA}
-  ].filter(b => b.translations?.length);
+  ].filter(b => b.translations?.length));
   const books = editions.map(b => {
     const original = window.VAHINI_BOOKS?.find(x => x.id === b.id);
     return {...b, sourceUrl:original.sourceUrl, unitLabel:original.unitLabel, chapters:b.translations.map((t,i) => ({...original.topics[i],...t,

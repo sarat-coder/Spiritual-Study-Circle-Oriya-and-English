@@ -42,6 +42,19 @@ for (const [file, language] of [['index.html','en'], ['odia.html','or'], ['hindi
   const {context, node, route} = loadPage(file);
   const {VAHINI_BOOKS:books, RAMAKATHA_STUDIES:studies, renderRamakathaStudy:render} = context.window;
   const rama = books.find(book => book.id === 'ramakatha-rasavahini');
+  const ordered = context.window.orderVahiniBooks(books);
+  assert.deepEqual(Array.from(ordered.slice(0, 2), b => b.id), ['ramakatha-rasavahini', 'bhagavata-vahini']);
+  assert.deepEqual(Array.from(ordered.slice(2), b => b.id), Array.from(books.filter(b => !['ramakatha-rasavahini', 'bhagavata-vahini'].includes(b.id)), b => b.id));
+  assert.equal(ordered.length, books.length);
+  const selector = node(language === 'en' ? 'mobile-book' : language === 'or' ? 'odia-book' : 'hindi-book').innerHTML;
+  const options = [...selector.matchAll(/<option[^>]*>([^<]+)<\/option>/g)].map(m => m[1]);
+  const firstTitles = {en:['Ramakatha Rasavahini','Bhagavatha Vahini'], or:['ରାମକଥା ରସବାହିନୀ','ଭାଗବତ ବାହିନୀ'], hi:['रामकथा रसवाहिनी','भागवत वाहिनी']};
+  if(language === 'en') {
+    assert.deepEqual(options.slice(0,2), Array.from(ordered.slice(0,2), b => b.title));
+    const list = node('book-list').innerHTML;
+    assert(list.indexOf(rama.title) < list.indexOf(ordered[1].title));
+  } else assert.deepEqual(options.slice(0,2), firstTitles[language]);
+  assert.equal(options.length, 15);
   const data = JSON.parse(JSON.stringify(studies));
   assert.equal(Object.keys(data).length, 32);
   assert.deepEqual(Object.keys(data), Array.from(rama.topics, topic => topic.id), 'chapter IDs and order');
